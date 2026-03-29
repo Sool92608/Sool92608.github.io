@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>海报设计作品（爆竹图鉴） - 设计作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #FDFCFB;
+            color: #1A1A1A;
+        }
+        
+        .serif-font {
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #FDFCFB;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1A1A1A;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 48px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #555555;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #1A1A1A;
+        }
+        
+        .main-content {
+            padding-top: 120px;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #888888;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-bottom: 40px;
+        }
+        
+        .back-button:hover {
+            color: #1A1A1A;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+            margin-bottom: 80px;
+        }
+        
+        .section {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 0 32px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item img:hover {
+            opacity: 0.9;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+        
+        .info-item {
+            border-top: 2px solid #E0E0E0;
+            padding-top: 32px;
+        }
+        
+        .info-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1A1A1A;
+        }
+        
+        .info-item p {
+            color: #666666;
+            line-height: 1.8;
+        }
+        
+        .project-meta {
+            background-color: #F8F6F5;
+            padding: 40px;
+        }
+        
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+        
+        .meta-item label {
+            display: block;
+            font-size: 14px;
+            color: #888888;
+            margin-bottom: 8px;
+        }
+        
+        .meta-item span {
+            color: #1A1A1A;
+            font-size: 16px;
+        }
+        
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tool-tag {
+            background-color: white;
+            padding: 8px 16px;
+            color: #666666;
+            font-size: 14px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .tag {
+            background-color: #F8F6F5;
+            padding: 8px 20px;
+            color: #666666;
+            font-size: 14px;
+        }
+        
+        .navigation {
+            background-color: #F8F6F5;
+            padding: 48px 32px;
+        }
+        
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid,
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo serif-font">设计作品集</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#about">简介</a></li>
+                <li><a href="index.html#works">作品</a></li>
+                <li><a href="index.html#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="section">
+            <a href="index.html#works" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                返回作品列表
+            </a>
+        </div>
+
+        <!-- Hero Image -->
+        <img src="/work5.jpg" alt="海报设计作品（爆竹图鉴）" class="hero-image" />
+
+        <!-- Title and Description -->
+        <div class="section">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 serif-font">海报设计作品（爆竹图鉴）</h1>
+            <p class="text-xl text-[#555555] leading-relaxed">
+                以中国传统爆竹为主题的系列海报设计，融合传统文化与现代设计语言，展现独特的东方美学。
+            </p>
+        </div>
+
+        <!-- Gallery -->
+        <div class="section" style="max-width: 1400px;">
+            <h2 class="text-2xl font-bold mb-8 text-center serif-font">作品展示</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/work5.jpg" alt="爆竹图鉴 - 主图" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20firecracker%20poster%20design%20detail%20view%2C%20traditional%20chinese%20elements%2C%20minimalist&image_size=landscape_16_9" alt="爆竹图鉴 - 细节图1" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20new%20year%20poster%20color%20palette%2C%20red%20and%20gold%20colors%2C%20design%20process&image_size=landscape_16_9" alt="爆竹图鉴 - 细节图2" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Process -->
+        <div class="section">
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3 class="serif-font">设计理念</h3>
+                    <p>本系列海报以"爆竹图鉴"为主题，通过对中国传统爆竹的形态、色彩、纹样进行现代演绎，展现东方美学的独特魅力。设计融合传统元素与极简风格，让古老文化在现代语境中焕发新生。</p>
+                </div>
+                <div class="info-item">
+                    <h3 class="serif-font">排版设计</h3>
+                    <p>选用宋体与无衬线字体的组合，主标题采用宋体展现传统文化底蕴，辅助文字使用现代无衬线字体增强可读性，字间距和行高经过精心调整，营造优雅的视觉节奏。</p>
+                </div>
+                <div class="info-item">
+                    <h3 class="serif-font">色彩方案</h3>
+                    <p>主色调采用中国红与金色的经典组合，红色象征喜庆与活力，金色代表尊贵与辉煌。辅以墨色与米白作为中性色，整体色彩比例控制在60%红色、20%金色、20%中性色，既传统又现代。</p>
+                </div>
+                <div class="info-item">
+                    <h3 class="serif-font">布局说明</h3>
+                    <p>采用中轴对称的传统构图方式，融入现代网格系统。视觉元素围绕中心轴线有序排列，通过留白营造呼吸感，在对称中寻求微妙的变化，体现"和而不同"的东方哲学。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Metadata -->
+        <div class="section">
+            <div class="project-meta">
+                <h3 class="text-lg font-semibold mb-6 serif-font">项目详情</h3>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <label>分类</label>
+                        <span>海报设计</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>日期</label>
+                        <span>2024-01-15</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>客户</label>
+                        <span>文化艺术中心</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>工具</label>
+                        <div class="tools">
+                            <span class="tool-tag">Illustrator</span>
+                            <span class="tool-tag">Photoshop</span>
+                            <span class="tool-tag">InDesign</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="section">
+            <div class="tags">
+                <span class="tag">海报设计</span>
+                <span class="tag">视觉传达</span>
+                <span class="tag">传统元素</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Navigation Footer -->
+    <section class="navigation">
+        <div class="nav-container">
+            <div style="width: 33%;"></div>
+            <div style="text-align: right; width: 33%;">
+                <a href="index.html#works" class="text-[#666666] hover:text-[#1A1A1A] transition-colors">
+                    <div class="text-sm text-[#888888]">返回作品列表</div>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
