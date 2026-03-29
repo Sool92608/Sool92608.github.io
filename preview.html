@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>肖文瑄 - 视觉设计师作品集</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        :root {
+            --cream: #FDFCFB;
+            --light-cream: #F8F6F5;
+            --dark: #1A1A1A;
+            --medium-gray: #555555;
+            --light-gray: #888888;
+            --border-gray: #E0E0E0;
+            --warm-gold: #A08060;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo svg {
+            width: 60px;
+            height: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--dark);
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex: 1;
+        }
+        
+        .hero-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 100px 80px 80px;
+        }
+        
+        .hero-right {
+            flex: 1;
+            position: relative;
+        }
+        
+        .hero-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom right, rgba(0,0,0,0.05), transparent);
+            pointer-events: none;
+        }
+        
+        .subtitle {
+            color: var(--warm-gold);
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+        }
+        
+        .hero-title {
+            font-family: 'Georgia', serif;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+        
+        .hero-description {
+            color: var(--medium-gray);
+            font-size: 18px;
+            max-width: 400px;
+            margin-bottom: 40px;
+        }
+        
+        .signature {
+            font-family: 'Georgia', serif;
+            font-size: 48px;
+            font-style: italic;
+            font-weight: 300;
+            color: var(--dark);
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: transparent;
+            border: 2px solid var(--dark);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--dark);
+            color: white;
+        }
+        
+        .btn svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+        
+        .简介 {
+            padding: 120px 80px;
+            background: var(--light-cream);
+        }
+        
+        .简介-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .简介-title {
+            font-family: 'Georgia', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+        
+        .简介-text {
+            color: var(--medium-gray);
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 32px;
+            border-top: 2px solid var(--border-gray);
+        }
+        
+        .stat-value {
+            font-family: 'Georgia', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: var(--light-gray);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .works {
+            padding: 120px 80px;
+        }
+        
+        .works-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .works-title {
+            font-family: 'Georgia', serif;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .works-subtitle {
+            color: var(--medium-gray);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .work-card {
+            position: relative;
+            overflow: hidden;
+            background: white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .work-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .work-card:hover .work-image {
+            transform: scale(1.05);
+        }
+        
+        .work-info {
+            padding: 24px;
+        }
+        
+        .work-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .work-category {
+            color: var(--light-gray);
+            font-size: 14px;
+        }
+        
+        .work-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            background: var(--light-cream);
+        }
+        
+        .work-details.expanded {
+            max-height: 1000px;
+            padding: 24px;
+        }
+        
+        .details-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        @media (min-width: 640px) {
+            .details-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .details-gallery {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
+        .details-gallery img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            background: white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .details-gallery img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .collapse-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--light-gray);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .collapse-btn:hover {
+            color: var(--dark);
+        }
+        
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .lightbox-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            cursor: default;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            opacity: 0.7;
+        }
+        
+        .联系 {
+            padding: 120px 80px;
+            text-align: center;
+            background: var(--light-cream);
+        }
+        
+        .联系-title {
+            font-family: 'Georgia', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .联系-description {
+            color: var(--medium-gray);
+            font-size: 18px;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-left {
+                padding: 120px 40px 60px;
+            }
+            
+            .hero-right {
+                min-height: 500px;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .简介-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            
+            .works-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            nav {
+                padding: 20px 40px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-left,
+            .简介,
+            .works,
+            .联系 {
+                padding: 80px 24px;
+            }
+            
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                gap: 16px;
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero-left {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .hero-right {
+            animation: fadeInRight 0.8s ease-out 0.3s both;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <svg viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 5 L50 5 L50 35 L10 35 Z" stroke="#1A1A1A" stroke-width="2" fill="none"/>
+                <circle cx="30" cy="20" r="8" fill="#1A1A1A"/>
+            </svg>
+        </div>
+        <div class="nav-links">
+            <a href="#hero">首页</a>
+            <a href="#简介">简介</a>
+            <a href="#works">作品</a>
+            <a href="#联系">联系</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <p class="subtitle">视觉设计师</p>
+                <h1 class="hero-title">Hello,我是<br/>肖文瑄</h1>
+                <p class="hero-description">
+                    专注于视觉传达领域，用设计捕捉情绪，传递态度，在每一次创作中打磨细节与质感。
+                </p>
+                <div class="signature">^_^</div>
+                <a href="#works" class="btn">
+                    查看全部作品
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="hero-right">
+                <img src="./public/work4.jpg" alt="个人作品">
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="简介" class="简介">
+        <div class="简介-grid">
+            <div>
+                <h2 class="简介-title">关于我</h2>
+                <p class="简介-text">
+                    我是一名专注于视觉传达领域的设计师，拥有丰富的设计经验。具备良好的审美能力与视觉叙事能力。
+                </p>
+                <p class="简介-text">
+                    我擅长视觉创意与平面设计，注重用户体验与视觉呈现，执行力强，习惯用设计捕捉情绪，传递态度，在每一次创作中打磨细节与质感。
+                </p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">3年+</div>
+                    <div class="stat-label">设计探索</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">30+</div>
+                    <div class="stat-label">创作积累</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">10+</div>
+                    <div class="stat-label">实战项目</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">持续</div>
+                    <div class="stat-label">学习中</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="works">
+        <div class="works-header">
+            <h2 class="works-title">作品展示</h2>
+            <p class="works-subtitle">
+                探索我的设计作品，包括海报设计、包装设计、品牌设计等多个领域。
+            </p>
+        </div>
+        <div class="works-grid">
+            <div class="work-card" id="poster-card">
+                <div onclick="togglePosterDetails()">
+                    <img class="work-image" src="./public/work5.jpg" alt="信息图表设计作品">
+                    <div class="work-info">
+                        <h3 class="work-title">信息图表设计作品</h3>
+                        <p class="work-category">以“爆竹文化”为核心的系列信息图表，从文化象征、工艺结构、历史演化三大维度，用黑金质感视觉与可视化数据，全面呈现爆竹的传统意涵、制作技艺与当代价值，</p>
+                    </div>
+                </div>
+                <div class="work-details" id="poster-details">
+                    <div class="details-gallery">
+                        <img src="./public/work5.jpg" alt="爆竹图鉴 - 细节图1" onclick="openLightbox('./public/work5.jpg')">
+                        <img src="./public/work6.jpg" alt="爆竹图鉴 - 细节图2" onclick="openLightbox('./public/work6.jpg')">
+                        <img src="./public/work7.jpg" alt="爆竹图鉴 - 细节图3" onclick="openLightbox('./public/work7.jpg')">
+                    </div>
+                    <button class="collapse-btn" onclick="togglePosterDetails()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 15l-6-6-6 6"/>
+                        </svg>
+                        收起详情
+                    </button>
+                </div>
+            </div>
+            <div class="work-card" id="packaging-card">
+                <div onclick="togglePackagingDetails()">
+                    <img class="work-image" src="./public/work2.jpg" alt="包装设计作品">
+                    <div class="work-info">
+                        <h3 class="work-title">包装设计作品</h3>
+                        <p class="work-category">“永安云芽”茶包装设计，以梯田线条为视觉符号，用清新绿色调与自然元素，将地域山水与茶韵文化融入全系列物料，传递出质朴雅致的东方茶礼美学。</p>
+                    </div>
+                </div>
+                <div class="work-details" id="packaging-details">
+                    <div class="details-gallery">
+                        <img src="./public/work8.png" alt="包装设计 - 细节图1" onclick="openLightbox('./public/work8.png')">
+                        <img src="./public/work10.jpg" alt="包装设计 - 细节图2" onclick="openLightbox('./public/work10.jpg')">
+                        <img src="./public/work9.jpg" alt="包装设计 - 细节图3" onclick="openLightbox('./public/work9.jpg')">
+                    </div>
+                    <button class="collapse-btn" onclick="togglePackagingDetails()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 15l-6-6-6 6"/>
+                        </svg>
+                        收起详情
+                    </button>
+                </div>
+            </div>
+            <div class="work-card" id="brand-card">
+                <div onclick="toggleBrandDetails()">
+                    <img class="work-image" src="./public/work3.png" alt="品牌设计作品">
+                    <div class="work-info">
+                        <h3 class="work-title">品牌设计作品</h3>
+                        <p class="work-category">“慢宋”品牌系统设计，以水墨竹韵与宋式建筑为视觉符号，通过木质、宣纸等质朴材质与极简排版，将宋代雅致生活美学贯穿于全系列物料，传递出慢享时光的东方生活态度。</p>
+                    </div>
+                </div>
+                <div class="work-details" id="brand-details">
+                    <div class="details-gallery">
+                        <img src="./public/work11.png" alt="品牌设计 - 细节图1" onclick="openLightbox('./public/work11.png')">
+                        <img src="./public/work12.png" alt="品牌设计 - 细节图2" onclick="openLightbox('./public/work12.png')">
+                        <img src="./public/work13.png" alt="品牌设计 - 细节图3" onclick="openLightbox('./public/work13.png')">
+                        <img src="./public/work14.png" alt="品牌设计 - 细节图4" onclick="openLightbox('./public/work14.png')">
+                        <img src="./public/work15.jpg" alt="品牌设计 - 细节图5" onclick="openLightbox('./public/work15.jpg')">
+                    </div>
+                    <button class="collapse-btn" onclick="toggleBrandDetails()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 15l-6-6-6 6"/>
+                        </svg>
+                        收起详情
+                    </button>
+                </div>
+            </div>
+            <div class="work-card" id="ip-card">
+                <div onclick="toggleIPDetails()">
+                    <img class="work-image" src="./public/work16.png" alt="IP设计作品">
+                    <div class="work-info">
+                        <h3 class="work-title">IP设计作品</h3>
+                        <p class="work-category">“步虎虎”IP形象设计，以非遗布老虎为核心符号，融合萌系Q版造型与国潮年味元素，通过丰富的表情包、换装及衍生周边，传递出沉稳勇敢的文明薪火守护者形象，让传统虎文化焕发新生。</p>
+                    </div>
+                </div>
+                <div class="work-details" id="ip-details">
+                    <div class="details-gallery">
+                        <img src="./public/work16.png" alt="IP设计 - 细节图1" onclick="openLightbox('./public/work16.png')">
+                        <img src="./public/work20.png" alt="IP设计 - 细节图2" onclick="openLightbox('./public/work20.png')">
+                        <img src="./public/work17.png" alt="IP设计 - 细节图3" onclick="openLightbox('./public/work17.png')">
+                    </div>
+                    <button class="collapse-btn" onclick="toggleIPDetails()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 15l-6-6-6 6"/>
+                        </svg>
+                        收起详情
+                    </button>
+                </div>
+            </div>
+            <div class="work-card" id="logo-card">
+                <div onclick="toggleLogoDetails()">
+                    <img class="work-image" src="./public/work18.jpg" alt="LOGO设计作品">
+                    <div class="work-info">
+                        <h3 class="work-title">LOGO设计作品</h3>
+                        <p class="work-category">以多元视觉风格为载体，将文化意象、品牌内核与创意表达深度融合，在传统与潮流、极简与趣味的碰撞中，探索视觉符号的叙事可能与情感传递。</p>
+                    </div>
+                </div>
+                <div class="work-details" id="logo-details">
+                    <div class="details-gallery">
+                        <img src="./public/work18.jpg" alt="LOGO设计 - 细节图1" onclick="openLightbox('./public/work18.jpg')">
+                        <img src="./public/work23.jpg" alt="LOGO设计 - 细节图2" onclick="openLightbox('./public/work23.jpg')">
+                        <img src="./public/work24.jpg" alt="LOGO设计 - 细节图3" onclick="openLightbox('./public/work24.jpg')">
+                        <img src="./public/work25.jpg" alt="LOGO设计 - 细节图4" onclick="openLightbox('./public/work25.jpg')">
+                        <img src="./public/work26.jpg" alt="LOGO设计 - 细节图5" onclick="openLightbox('./public/work26.jpg')">
+                    </div>
+                    <button class="collapse-btn" onclick="toggleLogoDetails()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 15l-6-6-6 6"/>
+                        </svg>
+                        收起详情
+                    </button>
+                </div>
+            </div>
+            <div class="work-card" id="poster2-card">
+                <div onclick="togglePoster2Details()">
+                    <img class="work-image" src="./public/work19.jpg" alt="海报设计作品">
+                    <div class="work-info">
+                        <h3 class="work-title">海报设计作品</h3>
+                        <p class="work-category">以多元视觉语言与创意叙事为媒介，在商业传播、公益呼吁与艺术表达的不同场景里，用风格化的视觉符号传递情绪与价值，探索平面设计的情感张力与社会意义。</p>
+                    </div>
+                </div>
+                <div class="work-details" id="poster2-details">
+                    <div class="details-gallery">
+                        <img src="./public/work19.jpg" alt="海报设计 - 细节图1" onclick="openLightbox('./public/work19.jpg')">
+                        <img src="./public/work21.jpg" alt="海报设计 - 细节图2" onclick="openLightbox('./public/work21.jpg')">
+                        <img src="./public/work22.jpg" alt="海报设计 - 细节图3" onclick="openLightbox('./public/work22.jpg')">
+                    </div>
+                    <button class="collapse-btn" onclick="togglePoster2Details()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 15l-6-6-6 6"/>
+                        </svg>
+                        收起详情
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="联系" class="联系">
+        <h2 class="联系-title">联系我</h2>
+        <p class="联系-description">
+            电话：19179623893
+            邮件：3223731751@qq.com
+        </p>
+        <a href="mailto:hello@example.com" class="btn">
+            发送邮件
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </a>
+    </section>
+
+    <div class="lightbox-overlay" id="lightbox-overlay" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                关闭
+            </button>
+            <img id="lightbox-image" src="" alt="大图预览">
+        </div>
+    </div>
+
+    <script>
+        function togglePosterDetails() {
+            const details = document.getElementById('poster-details');
+            details.classList.toggle('expanded');
+        }
+
+        function togglePackagingDetails() {
+            const details = document.getElementById('packaging-details');
+            details.classList.toggle('expanded');
+        }
+
+        function toggleBrandDetails() {
+            const details = document.getElementById('brand-details');
+            details.classList.toggle('expanded');
+        }
+
+        function toggleIPDetails() {
+            const details = document.getElementById('ip-details');
+            details.classList.toggle('expanded');
+        }
+
+        function toggleLogoDetails() {
+            const details = document.getElementById('logo-details');
+            details.classList.toggle('expanded');
+        }
+
+        function togglePoster2Details() {
+            const details = document.getElementById('poster2-details');
+            details.classList.toggle('expanded');
+        }
+
+        function openLightbox(imageSrc) {
+            const overlay = document.getElementById('lightbox-overlay');
+            const image = document.getElementById('lightbox-image');
+            image.src = imageSrc;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const overlay = document.getElementById('lightbox-overlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(253, 252, 251, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = 'transparent';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
